@@ -2,6 +2,7 @@ import pinoyLogo from '@/assets/images/branding/Pinoy MG Logo.png'
 import { Button } from '@/components/ui/button'
 
 const navLinks = ['Pinoy-Games', 'E-Casino', 'Promotions', 'Chat'] as const
+const activeNavLink = 'Pinoy-Games' as const
 
 interface HeaderProps {
   onLoginClick?: () => void
@@ -51,40 +52,38 @@ export function Header({
   }
 
   return (
-    <div className="px-1">
-      <div className="flex items-start justify-between">
+    <div className="px-4 py-3 shrink-0">
+      <div className="flex items-center justify-between">
         <img
           src={pinoyLogo}
           alt="Pinoy MG logo"
-          className="h-[3.2rem] w-[3.2rem] rounded-full object-cover"
+          className="h-[3.5rem] w-[3.5rem] rounded-full object-cover"
         />
 
-        <div className="ml-2 flex flex-1 flex-col items-end">
-          <div className="flex gap-3">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-[#1d4ed8] font-semibold text-[0.9rem]"
+        <div className="ml-2 flex flex-1 flex-col items-center">
+          <div className="flex w-full justify-end gap-[3vw] pr-[8vw]">
+            <button
+              className="text-[#000080] font-bold text-[0.85rem] hover:opacity-80"
               onClick={onLoginClick}
             >
               Login
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-[#1d4ed8] font-semibold text-[0.9rem]"
+            </button>
+            <button
+              className="text-[#000080] font-bold text-[0.85rem] hover:opacity-80"
               onClick={onSignUpClick}
             >
               Register
-            </Button>
+            </button>
           </div>
 
-          <nav className="mt-1 flex w-full justify-between text-[0.78rem] text-[#8a8ce8]">
+          <nav className="mt-3 flex w-full justify-between text-[0.7rem] font-medium leading-none text-[#8a8ce8]">
             {navLinks.map((link) => (
               <a
                 key={link}
                 href="/"
-                className="flex-1 text-center whitespace-nowrap"
+                className={`pb-0.5 text-center ${
+                  link === activeNavLink ? 'underline underline-offset-4 decoration-[#8a8ce8]' : ''
+                }`}
                 onClick={(e) => e.preventDefault()}
               >
                 {link}

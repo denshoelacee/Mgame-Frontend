@@ -8,6 +8,8 @@
 
 - Set up and refined the main homepage layout in `src/App.tsx`.
 - Built the promo card mosaic using a fixed `3 big cards + 5 small cards` structure.
+- Switched promo tiles from playing a video to rendering as images by generating a poster image from the existing video source at runtime (cached in localStorage).
+- Matched the mosaic spacing closer to the reference using `gap-[6px]`.
 
 ## Files Updated
 
@@ -19,12 +21,18 @@
 - Removed extra promo cards that caused the wrong number of visible cards.
 - Removed dummy desktop sections and fake data usage.
 - Changed the desktop page wrapper so it is full-page instead of modal-like.
+- wala nang video pinalitan kona nang image 
+- match da reference image.
 
 ### `src/components/common/Header.tsx`
 
 - Kept the mobile header for mobile, tablet, and iPad.
 - Added a `variant` prop with `mobile` and `desktop` modes.
 - Created the desktop header version using the requested blue bar style.
+
+### `src/hooks/useVideoPoster.ts`
+
+- Added a helper hook that extracts a poster image from the video URL and returns a data URL (cached).
 
 ## Final UI State
 
@@ -41,10 +49,7 @@
 
 ## Notes For Next Work
 
-- Palitan munlng yung `Desktop Lobby` and `Desktop` or i delete munlng ya kung nde needed.
-- Tune promo card height further if the visual spacing needs to match the reference even more closely.
-- Tas yung mga card ya ewan ko kung fixed naba talaga yang `3 big cards + 5 small cards ` pero pag fix not static
-munlng ah tanggalin munanlng yung scrollable.
-- Tapos naman dun sa `Header` unting revision ka i tugma munlng same with the design tapos si `Manoy` i up mo siya dun sa modal nakalimutan ko.
+- check munlng yung page ulit if needed to fix paba
 
 `Gang D2 muna tatrabahuin ko`
+    
