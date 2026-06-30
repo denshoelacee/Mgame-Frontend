@@ -7,11 +7,13 @@ export default function AppLayout() {
 
 
   return (
-    <section className="flex min-h-dvh w-full flex-col bg-white">
+    <section className="flex min-h-dvh w-full flex-col bg-white ">
       {/* Header */}
-      <Header />
+       <header className="sticky top-0 z-50 bg-white">
+        <Header />
+      </header>
 
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1 overflow-y-auto">
         {/* Desktop Sidebar */}
         <aside className="hidden xl:block">
           <Sidebar />

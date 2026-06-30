@@ -3,12 +3,16 @@ import GameSection from "@/features/pinoygames/components/GameSectionPinoy";
 
 function PinoyGames() {
   return (
-    <GameSection
-      title="Pinoy Games"
-      mobileCards={pinoyGamesMobile}
-      desktopCards={pinoyGamesDesktop}
-    />
+    <div className="h-screen ">
+      <GameSection
+        title="Pinoy Games"
+        mobileCards={pinoyGamesMobile}
+        desktopCards={pinoyGamesDesktop}
+      />
+
+    </div>
   );
 }
+
 
 export default PinoyGames;

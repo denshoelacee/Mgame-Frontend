@@ -20,7 +20,7 @@ export default function GameSectionPinoy({
             </div>
 
             {/* Mobile */}
-            <div className="xl:hidden flex-1 overflow-hidden px-[6px] pt-[6px]">
+            <div className="xl:hidden flex-1 overflow-y-auto px-[6px] pt-[6px] max-h-[calc(100dvh-150px)]">
                 <div className="grid grid-cols-3 gap-[6px] auto-rows-[calc((100dvh-150px)/4.4)]">
                     {mobileCards.map((card) => (
                         <PromoCard
