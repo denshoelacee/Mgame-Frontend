@@ -17,6 +17,7 @@ Mgame-Frontend/
 │  ├─ components/
 │  │  ├─ common/
 │  │  └─ ui/
+|  ├─ constants/
 │  ├─ config/
 │  │  └─ app.ts
 │  ├─ features/
@@ -30,8 +31,16 @@ Mgame-Frontend/
 │  │  │  ├─ components/
 │  │  │  └─ hooks/
 │  │  └─ slots/
-│  │     ├─ components/
-│  │     └─ hooks/
+│  │  │  ├─ components/
+│  │  │  └─ hooks/
+|  |  └─ ecasino/
+|  |  |  ├─ components/
+│  │  |  ├─ hooks/
+|  |  |  └─ pages/
+|  |  └─ pinoygames/
+|  |  |  ├─ components/
+|  |  |  ├─ hooks/
+|  |  |  └─ pages/
 │  ├─ game/
 │  │  ├─ audio/
 │  │  ├─ canvas/
@@ -39,6 +48,8 @@ Mgame-Frontend/
 │  │  ├─ pixi/
 │  │  └─ scenes/
 │  ├─ hooks/
+|  ├─ Interfaces/
+|  ├─ layouts/
 │  ├─ lib/
 │  │  └─ utils.ts
 │  ├─ services/
