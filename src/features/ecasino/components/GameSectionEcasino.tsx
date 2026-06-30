@@ -31,7 +31,6 @@ export default function GameSectionEcasino({ title, cards }: GameSectionProps) {
             key={card.id}
             className={card.className}
             staticSrc={card.staticSrc}
-            size={card.size}
           />
         ))}
       </div>

@@ -1,12 +1,10 @@
 export function PromoCard({
   className = '',
   staticSrc,
-  size
 
 }: {
   className?: string
   staticSrc: string
-  size: "big" | "small";
 
 }) {
   return (

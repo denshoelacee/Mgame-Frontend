@@ -1,20 +1,13 @@
 import pinoyLogo from "@/assets/images/branding/Pinoy MG Logo.png";
-import { Button } from "@/components/ui/Button";
-
 import { navLinks } from "@/constants/navigation";
 import { NavLink } from "react-router-dom";
 
 interface HeaderProps {
   onLoginClick?: () => void;
-  onSignUpClick?: () => void;
-  // variant?: "mobile" | "desktop";
+  onRegisterClick?: () => void;
 }
 
-export function Header({
-  onLoginClick,
-  onSignUpClick,
-  // variant = "mobile",
-}: HeaderProps) {
+export function Header({ onLoginClick, onRegisterClick }: HeaderProps) {
  
   return (
     <div className="px-4 py-3 shrink-0">
@@ -31,7 +24,7 @@ export function Header({
             </button>
             <button
               className="text-[var(--primary-color)] font-semibold text-[0.85rem] hover:opacity-80"
-              onClick={onSignUpClick}
+              onClick={onRegisterClick}
             >
               Register
             </button>

@@ -26,7 +26,6 @@ export default function GameSectionPinoy({
                         <PromoCard
                             key={card.id}
                             className={card.className}
-                            size={card.size}
                             staticSrc={card.staticSrc}
                         />
                     ))}
@@ -39,7 +38,6 @@ export default function GameSectionPinoy({
                     <PromoCard
                         key={card.id}
                         className={card.className}
-                        size={card.size}
                         staticSrc={card.staticSrc}
                     />
                 ))}
