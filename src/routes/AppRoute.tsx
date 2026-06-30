@@ -4,6 +4,8 @@ import DesktopLayout from "@/layouts/DesktopLayout";
 import AuthLayout from "@/layouts/AuthLayout";
 import Login from "@/components/auth/login/login";
 import Register from "@/components/auth/register/register";
+import SlotViewAll from "@/pages/slotViewAll";
+import LiveViewAll from "@/pages/liveViewAll";
 import { Routes, Route } from "react-router-dom"; 
 
 export default function AppRoutes() { 
@@ -14,6 +16,8 @@ export default function AppRoutes() {
       <Route path="/"  element={<DesktopLayout />}> 
         <Route index element={<PinoyGames />} /> 
         <Route path="e-casino" element={<Ecasino />} /> 
+        <Route path="slotViewAll" element={<SlotViewAll />} /> 
+        <Route path="liveViewAll" element={<LiveViewAll />} /> 
       </Route> 
 
       {/* Auth Routes */}

@@ -5,9 +5,9 @@ import { Outlet } from "react-router-dom";
 
 export default function AppLayout() {
   return (
-    <section className="flex min-h-dvh w-full flex-col bg-white ">
+    <section className="flex h-full w-full flex-col bg-white overflow-hidden">
       {/* Header */}
-       <header className="sticky top-0 z-50 bg-white">
+       <header className="sticky top-0 z-50 bg-white shrink-0">
         <Header />
       </header>
 

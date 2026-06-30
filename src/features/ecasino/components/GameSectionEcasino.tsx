@@ -1,6 +1,7 @@
 
 import { PromoCard } from "@/components/ui/PromoCard";
 import type { PromoCardProps } from "@/Interfaces/types";
+import { useNavigate } from "react-router-dom";
 
 interface GameSectionProps {
   title: string;
@@ -8,11 +9,26 @@ interface GameSectionProps {
 }
 
 export default function GameSectionEcasino({ title, cards }: GameSectionProps) {
+  const navigate = useNavigate();
+
+  const handleViewAll = () => {
+    if (title === "Slots") {
+      navigate("/slotViewAll");
+    } else if (title === "Live") {
+      navigate("/liveViewAll");
+    }
+  };
+
   return (
     <section className="mb-5">
       <div className="mb-4 flex items-center justify-between mt-5">
-        <h2 className="text-xs xl:text-xl font-bold text-[var(--primary-color)]">{title}</h2> 
-        <h2 className="text-xs xl:text-lg font-bold text-black font-normal">View all</h2>
+        <h2 className="text-xs xl:text-xl font-bold text-[var(--primary-color)]">{title}</h2>
+        <button
+          onClick={handleViewAll}
+          className="text-xs xl:text-lg font-bold text-black font-normal hover:opacity-80 cursor-pointer"
+        >
+          View all
+        </button>
       </div>
 
       {/* Desktop */}
