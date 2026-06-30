@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/Input";
-import { FaTimes } from "react-icons/fa";
+import { X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 function Register() {
@@ -12,7 +12,7 @@ function Register() {
         onClick={() => navigate("/")}
         className="absolute top-4 right-4 text-gray-500 hover:text-black"
       >
-        <FaTimes size={22} />
+        <X size={22} />
       </button>
 
       <h1 className="text-3xl font-bold text-[var(--primary-color)] text-center">
