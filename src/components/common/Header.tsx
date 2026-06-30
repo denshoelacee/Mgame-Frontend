@@ -1,14 +1,10 @@
 import pinoyLogo from "@/assets/images/branding/Pinoy MG Logo.png";
 import { navLinks } from "@/constants/navigation";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
-interface HeaderProps {
-  onLoginClick?: () => void;
-  onRegisterClick?: () => void;
-}
+export function Header() {
+  const navigate = useNavigate();
 
-export function Header({ onLoginClick, onRegisterClick }: HeaderProps) {
- 
   return (
     <div className="px-4 py-3 shrink-0">
       <div className="flex items-center justify-between">
@@ -18,13 +14,13 @@ export function Header({ onLoginClick, onRegisterClick }: HeaderProps) {
           <div className="flex w-full justify-end gap-[3vw] ">
             <button
               className="text-[var(--primary-color)]  font-semibold text-[0.85rem] hover:opacity-80"
-              onClick={onLoginClick}
+              onClick={() => navigate('/login')}
             >
               Login
             </button>
             <button
               className="text-[var(--primary-color)] font-semibold text-[0.85rem] hover:opacity-80"
-              onClick={onRegisterClick}
+              onClick={() => navigate('/register')}
             >
               Register
             </button>

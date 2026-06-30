@@ -1,48 +1,14 @@
 import { Header } from "@/components/common/Header";
 import Sidebar from "@/components/common/Sidebar";
 import MobileBottomNav from "@/components/common/Navbar";
-import Login from "@/components/auth/login/login";
-import Register from "@/components/auth/register/register";
 import { Outlet } from "react-router-dom";
-import { useState } from "react";
 
 export default function AppLayout() {
-  const [showLogin, setShowLogin] = useState(false);
-  const [showRegister, setShowRegister] = useState(false);
-
-  const handleLoginClick = () => {
-    setShowLogin(true);
-    setShowRegister(false);
-  };
-
-  const handleRegisterClick = () => {
-    setShowRegister(true);
-    setShowLogin(false);
-  };
-
-  const handleCloseLogin = () => {
-    setShowLogin(false);
-  };
-
-  const handleCloseRegister = () => {
-    setShowRegister(false);
-  };
-
-  const handleSwitchToRegister = () => {
-    setShowLogin(false);
-    setShowRegister(true);
-  };
-
-  const handleSwitchToLogin = () => {
-    setShowRegister(false);
-    setShowLogin(true);
-  };
-
   return (
     <section className="flex min-h-dvh w-full flex-col bg-white ">
       {/* Header */}
        <header className="sticky top-0 z-50 bg-white">
-        <Header onLoginClick={handleLoginClick} onRegisterClick={handleRegisterClick} />
+        <Header />
       </header>
 
       <div className="flex flex-1 overflow-y-auto">
@@ -96,18 +62,6 @@ export default function AppLayout() {
       <div className="xl:hidden fixed bottom-0 left-0 right-0 z-50">
         <MobileBottomNav />
       </div>
-
-      {/* Auth Modals */}
-      <Login 
-        isOpen={showLogin} 
-        onClose={handleCloseLogin} 
-        onRegister={handleSwitchToRegister} 
-      />
-      <Register 
-        isOpen={showRegister} 
-        onClose={handleCloseRegister} 
-        onLogin={handleSwitchToLogin} 
-      />
     </section>
   );
 }

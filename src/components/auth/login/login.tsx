@@ -1,46 +1,35 @@
 import { Input } from "@/components/ui/Input";
 import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-interface LoginProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onRegister: () => void;
-}
-function Login({ isOpen, onClose, onRegister }: LoginProps) {
+function Login() {
   const [rememberMe, setRememberMe] = useState(false);
-
-  if (!isOpen) return null;
+  const navigate = useNavigate();
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-xs p-4"
-      onClick={onClose}
-    >
-      <div
-        onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-md h-auto bg-[#f8eeee] rounded-2xl shadow-lg p-8 text-black"
+    <div className="mx-auto relative w-full max-w-md h-auto bg-[#f8eeee] rounded-2xl shadow-lg p-8 text-black">
+      <button
+        onClick={() => navigate("/")}
+        className="absolute top-4 right-4 text-gray-500 hover:text-black"
       >
+        <FaTimes size={22} />
+      </button>
+
+      <h1 className="text-2xl font-bold text-blue-600 text-center">
+        Log in to your account
+      </h1>
+
+      <p className="text-center text-gray-700 mt-2">
+        Don't have an account?{" "}
         <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-black"
+          type="button"
+          className="text-[var(--secondary-color)] font-semibold"
+          onClick={() => navigate("/register")}
         >
-          <FaTimes size={22} />
+          Register
         </button>
-
-        <h1 className="text-2xl font-bold text-blue-600 text-center">
-          Log in to your account
-        </h1>
-
-        <p className="text-center text-gray-700 mt-2">
-          Don't have an account?{" "}
-          <button
-            className="text-[var(--secondary-color)] font-semibold"
-            onClick={onRegister}
-          >
-            Register
-          </button>
-        </p>
+      </p>
 
         <form className="mt-8 space-y-3">
           {/* Phone */}
@@ -103,7 +92,6 @@ function Login({ isOpen, onClose, onRegister }: LoginProps) {
             Login
           </button>
         </form>
-      </div>
     </div>
   );
 }

@@ -1,43 +1,34 @@
 import { Input } from "@/components/ui/Input";
 import { FaTimes } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-interface RegisterProps {
-  isOpen: boolean
-  onClose: () => void;
-  onLogin: () => void;
-}
-function Register({ isOpen, onClose, onLogin }: RegisterProps) {
-
-  if (!isOpen) return null;
+function Register() {
+  const navigate = useNavigate();
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-xs p-4"
-      onClick={onClose}
-    >
-      <div
-        onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-md bg-[#f8eeee] rounded-2xl shadow-lg p-8 text-black"
+    <div className="mx-auto relative w-full max-w-md bg-[#f8eeee] rounded-2xl shadow-lg p-8 text-black">
+      {/* Close Button */}
+      <button
+        onClick={() => navigate("/")}
+        className="absolute top-4 right-4 text-gray-500 hover:text-black"
       >
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-black"
+        <FaTimes size={22} />
+      </button>
+
+      <h1 className="text-3xl font-bold text-[var(--primary-color)] text-center">
+        Create Account
+      </h1>
+
+      <p className="text-center text-gray-700 mt-2">
+        Already have an account?{" "}
+        <button 
+          type="button"
+          className="text-[var(--secondary-color)] font-semibold"
+          onClick={() => navigate("/login")}
         >
-          <FaTimes size={22} />
+          Login
         </button>
-
-        <h1 className="text-3xl font-bold text-[var(--primary-color)] text-center">
-          Create Account
-        </h1>
-
-        <p className="text-center text-gray-700 mt-2">
-          Already have an account?{" "}
-          <button className="text-[var(--secondary-color)] font-semibold"
-            onClick={onLogin}>
-            Login
-          </button>
-        </p>
+      </p>
 
         <form className="mt-8 space-y-2">
           {/* Phone */}
@@ -108,7 +99,6 @@ function Register({ isOpen, onClose, onLogin }: RegisterProps) {
             Register
           </button>
         </form>
-      </div>
     </div>
   );
 }
